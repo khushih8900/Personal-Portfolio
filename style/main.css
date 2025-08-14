@@ -1,0 +1,488 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Oswald", sans-serif;
+
+
+
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+:root {
+  --bg-color: #1f242d;
+  --second-bg-color: #323946;
+  --main-color: #7cf03d;
+  --white-color: #fff;
+  --disabled-color: #fff3;
+}
+
+.navigation {
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: fixed;
+  background-color: var(--bg-color);
+  z-index: 1;
+  padding: 0 10%;
+
+}
+
+.logo {
+  width: 40%;
+  display: flex;
+  align-items: self-start;
+  justify-content: flex-start;
+}
+
+.logo a {
+  font-size: 3rem;
+  color: var(--white-color);
+  font-weight: 800;
+
+}
+
+.nav-bar {
+  width: 60%;
+}
+
+.nav-bar ul {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+
+.nav-bar ul li a {
+  font-size: 1.2rem;
+  color: var(--white-color);
+  font-weight: 500;
+  transition: .5s;
+
+
+}
+
+.nav-bar ul li.active a {
+  color: var(--main-color);
+  font-weight: bold;
+  border-bottom: 2px solid var(--main-color);
+}
+
+
+.nav-bar li a:hover {
+  color: var(--main-color);
+
+}
+
+.nav-bar li.active {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--main-color);
+}
+
+#menuIcon {
+  font-size: 3rem;
+  color: var(--white-color);
+  display: none;
+
+}
+
+.logo i {
+  position: relative;
+}
+
+
+
+/* ============small nav-bar==================*/
+.side-bar {
+  position: absolute;
+  top: 7rem;
+  right: 0;
+  height: 100%;
+  width: 20%;
+  z-index: 1000;
+  display: none;
+}
+
+.side-navigation {
+  position: relative;
+  width: 70px;
+  height: 400px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.side-navigation ul {
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  padding: 0;
+}
+
+.side-navigation ul li {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+}
+
+.side-navigation ul li a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-weight: 600;
+}
+
+.side-navigation ul li a .icon {
+  position: relative;
+  display: block;
+  width: 55px;
+  height: 55px;
+  text-align: center;
+  line-height: 55px;
+  border-radius: 50%;
+  color: #222327;
+  font-size: 1.5em;
+}
+
+.side-navigation ul li.active a .icon {
+  background-color: var(--clr);
+  transform: translateX(-35px);
+}
+
+.side-navigation ul li a .icon::before {
+  content: " ";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--clr);
+  border-radius: 50%;
+  filter: blur(5px);
+  opacity: 0;
+}
+
+.side-navigation ul li.active a .icon::before {
+  opacity: .5;
+}
+
+.indicator {
+  position: absolute;
+  left: -35px;
+  width: 70px;
+  height: 70px;
+  background: #ffff;
+  border-radius: 50%;
+  transition: .5s;
+}
+
+.indicator::before {
+  content: ' ';
+  position: absolute;
+  left: 4px;
+  top: -28px;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 18px 15px #ffff;
+}
+
+.indicator::after {
+  content: ' ';
+  position: absolute;
+  left: 4px;
+  bottom: -28px;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 18px -15px #ffff;
+}
+
+/* এখন translateX এর বদলে translateY */
+.side-navigation ul li:nth-child(1).active~.indicator {
+  transform: translateY(calc(70px * 0));
+}
+
+.side-navigation ul li:nth-child(2).active~.indicator {
+  transform: translateY(calc(70px * 1));
+}
+
+.side-navigation ul li:nth-child(3).active~.indicator {
+  transform: translateY(calc(70px * 2));
+}
+
+.side-navigation ul li:nth-child(4).active~.indicator {
+  transform: translateY(calc(70px * 3));
+}
+
+.side-navigation ul li:nth-child(5).active~.indicator {
+  transform: translateY(calc(70px * 4));
+}
+
+/* star home section */
+.home-section {
+  width: 100%;
+  height: 100%;
+  padding: 5rem 10%;
+  background-color: var(--bg-color);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  position: absolute;
+  align-items: center;
+}
+
+.home-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  justify-content: center;
+  padding: 1rem 0;
+  height: 100%;
+  margin-top: 4rem;
+}
+
+
+
+.home-info h1 {
+
+  color: var(--white-color);
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.home-info h2 {
+
+  font-size: 2rem;
+  color: var(--white-color);
+  font-weight: 500;
+
+}
+
+.home-info h2 span {
+  color: transparent;
+  -webkit-text-stroke: .07rem var(--main-color);
+  position: relative;
+  padding: .2rem;
+  animation: display-text 16s linear infinite;
+  animation-delay: calc(-4s * var(--i));
+}
+
+@keyframes display-text {
+
+  25%,
+  100% {
+    display: none;
+  }
+
+}
+
+.home-info h2 span::before {
+  content: attr(data-text);
+  position: absolute;
+  width: 0;
+  white-space: nowrap;
+  border-right: .2rem solid var(--main-color);
+  color: var(--main-color);
+  overflow: hidden;
+  animation: fill-text 4s linear infinite;
+}
+
+@keyframes fill-text {
+
+  10%,
+  100% {
+    width: 0;
+  }
+
+  70%,
+  90% {
+    width: 100%;
+  }
+
+}
+
+.home-info p {
+  font-size: 1rem;
+  color: var(--white-color);
+  font-weight: 400;
+  margin: 1.5rem 0;
+}
+
+.download-btn {
+  display: flex;
+  gap: 1rem;
+}
+
+.download-btn button {
+  background: linear-gradient(to right, #7cf03d 0%, #40b800 51%, #7cf03d 100%);
+}
+
+.download-btn button {
+  margin-bottom: 1rem;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  font-size: 1rem;
+  color: white;
+  border-radius: 10px;
+  display: block;
+  border: none;
+}
+
+.download-btn button i {
+  font-size: 1rem;
+}
+
+.download-btn button:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 0 1rem var(--main-color);
+
+}
+
+.download-btn ul {
+  display: flex;
+
+}
+
+.download-btn ul li {
+  margin-left: 1rem;
+}
+
+.download-btn ul li a i {
+  padding: .7rem;
+  font-size: 1.5rem;
+  background-color: var(--main-color);
+  border: 1px solid var(--main-color);
+  color: var(--white-color);
+  border-radius: 50%;
+  transition: .4s;
+
+}
+
+.download-btn ul li a i:hover {
+  background-color: transparent;
+  color: var(--main-color);
+  box-shadow: 0 0 1rem var(--main-color);
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+}
+
+.img-bg {
+  position: relative;
+  width: 90%;
+  height: 100%;
+  border-radius: 50%;
+  padding: .2rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1rem solid transparent;
+  border-radius: 50%;
+}
+
+.img-bg::before,
+.img-bg::after {
+  content: '';
+  position: absolute;
+  width: 45rem;
+  height: 45rem;
+  background: conic-gradient(transparent, transparent, transparent, var(--main-color));
+  transform: rotate(0deg);
+  animation: rotate-border 10s linear infinite;
+
+
+
+}
+
+.img-bg::after {
+  animation-delay: -5s;
+}
+
+@keyframes colorChange {
+  0% {
+    --main-color: #B0DB9C;
+  }
+
+  33% {
+    --main-color: #B6F500;
+  }
+
+  66% {
+    --main-color: #A4DD00;
+  }
+
+  100% {
+    --main-color: #A4DD00;
+  }
+}
+
+.hero-img {
+  animation: colorChange 5s infinite;
+}
+
+@keyframes rotate-border {
+  100% {
+    transform: rotate(360deg);
+  }
+
+}
+
+.img-item {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-color);
+  border-radius: 50%;
+  overflow: hidden;
+  border: .01rem solid var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.img-item img {
+  position: absolute;
+  display: block;
+  mix-blend-mode: lighten;
+  width: 85%;
+  background: var(--bg-color);
+}
