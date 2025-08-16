@@ -755,18 +755,155 @@ section.active {
   text-align: center;
 }
 
-.portfolio-container {
-  text-align: left;
+.portfolio-info {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
 }
-.number.num-active{
+
+.portfolio-container {
+  width: 100%;
+  text-align: left;
+  gap: 2rem;
+  font-size: 1rem;
+}
+
+.number.num-active {
   display: block;
 }
-.number{
-  font-size:4rem;
+
+.number {
+  font-size: 4rem;
   -webkit-text-stroke: .1rem var(--main-color);
   color: transparent;
   display: none;
 }
+.portfolio-box{
+  width: 100%;
+}
+.portfolio-box h3 {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+.info {
+  margin: 1rem 0;
+  color: var(--main-color);
+  border-bottom: .1rem solid var(--white-color);
+  padding-bottom: 2rem;
+
+}
+
+.live-sources a {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+
+
+}
+
+.live-sources {
+  display: flex;
+  position: relative;
+
+}
+
+.live-sources span {
+  top: 0;
+  color: var(--bg-color);
+  font-size: 1rem;
+  position: absolute;
+  opacity: 0;
+  background-color: #fff;
+  padding: .3rem;
+  text-align: center;
+  border-radius: .2rem;
+  transition: .5s;
+
+
+
+}
+
+.live-sources:hover span {
+  opacity: 1;
+  transform: scale(1);
+
+
+}
+
+.live-sources i {
+  font-size: 3rem;
+  color: var(--white-color);
+  border-radius: 50%;
+  background-color: var(--second-bg-color);
+  border: #323946;
+  margin-right: 4rem;
+  padding: 1.2rem;
+
+
+}
+
+.live-sources i:hover {
+  color: var(--main-color);
+}
+
+.live-sources a:first-child i {
+  transform: rotate(-85deg);
+}
+.portfolio-item{
+  width: 100%;
+  height: 15rem;
+  border-radius: 1rem;
+ 
+
+}
+.portfolio-item{
+ display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  gap: 2rem;
+  height: inherit;
+  transition: .5s;
+}
+.portfolio-item {
+  transition: transform .5s ease-in-out;
+}
+.portfolio-item{
+  height: inherit;
+}
+.portfolio-img{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+.portfolio-img img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+
+}
+.nav-btn{
+  text-align: right;
+  margin-top: 2rem;
+}
+.nav-btn button{
+  display: inline-flex;
+  padding: .4rem;
+  background-color: var(--second-bg-color);
+  border: .1rem solid var(--main-color);
+  border-radius: .6rem;
+  font-size: 4rem;
+  color: var(--main-color);
+  cursor: pointer;
+  margin-left: 1rem;
+
+}
+.nav-btn button .disable{
+  border-color: var(--second-bg-color);
+  color: var(--disabled-color);
+}
+
+
