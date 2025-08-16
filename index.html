@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="style/responsive.css" />
     <!-- link for icons -->
     <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
       href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css"
       rel="stylesheet"
     />
@@ -25,7 +29,9 @@
       </div>
       <nav class="nav-bar">
         <ul>
-          <li class="list active"><a href="#HOME" class="active">Home</a></li>
+          <li class="list active-menu">
+            <a href="#HOME" class="active">Home</a>
+          </li>
           <li class="list"><a href="#Services">Services</a></li>
           <li class="list"><a href="#Resume">Resume</a></li>
           <li class="list"><a href="#Portfolio">Portfolio</a></li>
@@ -36,7 +42,7 @@
     <div class="side-bar" id="sideBar">
       <div class="side-navigation">
         <ul>
-          <li class="list active" style="--clr: #f44336">
+          <li class="list active-menu" style="--clr: #f44336">
             <a href="#">
               <span class="icon"><i class="fa-solid fa-house"></i></span>
             </a>
@@ -69,11 +75,12 @@
     <section class="home-section">
       <div class="home-info">
         <h1>Habibur Rahman</h1>
-        <h2>I'M A 
-          <span style="--i:1" data-text="CODER">CODER</span>
-          <span style="--i:2" data-text="PROGRAMER">PROGRAMER</span>
-          <span style="--i:3" data-text="DEVELOPER">DEVELOPER</span>
-          <span style="--i:4" data-text="DESIGNER">DESIGNER</span>
+        <h2>
+          I'M A
+          <span style="--i: 1" data-text="CODER">CODER</span>
+          <span style="--i: 2" data-text="PROGRAMER">PROGRAMER</span>
+          <span style="--i: 3" data-text="DEVELOPER">DEVELOPER</span>
+          <span style="--i: 4" data-text="DESIGNER">DESIGNER</span>
         </h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
@@ -106,6 +113,305 @@
           <div class="img-item">
             <img src="images/profile.png" alt="" />
           </div>
+        </div>
+      </div>
+    </section>
+    <!-- services section -->
+    <section class="services">
+      <h1>my <span>services</span></h1>
+      <div class="container">
+        <div class="service-box">
+          <div class="icon">
+            <i class="fa-solid fa-code"></i>
+            <a href="#"><i class="bx bx-arrow-down-right-stroke"></i> </a>
+          </div>
+          <h3>web development</h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil,
+            impedit ex quam voluptate dolores deserunt.
+          </p>
+        </div>
+        <div class="service-box">
+          <div class="icon">
+            <i class="bx bx-brush"></i>
+            <a href="#"><i class="bx bx-arrow-down-right-stroke"></i> </a>
+          </div>
+          <h3>UI/UX DESIGNER</h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil,
+            impedit ex quam voluptate dolores deserunt.
+          </p>
+        </div>
+        <div class="service-box">
+          <div class="icon">
+            <i class="bx bx-palette"></i>
+            <a href="#"><i class="bx bx-arrow-down-right-stroke"></i> </a>
+          </div>
+          <h3>GRAPHIC DESIGNER</h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil,
+            impedit ex quam voluptate dolores deserunt.
+          </p>
+        </div>
+        <div class="service-box">
+          <div class="icon">
+            <i class="bx bx-trending-up"></i>
+            <a href="#"><i class="bx bx-arrow-down-right-stroke"></i> </a>
+          </div>
+          <h3>SEO</h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil,
+            impedit ex quam voluptate dolores deserunt.
+          </p>
+        </div>
+        <div class="service-box">
+          <div class="icon">
+            <i class="bx bx-slideshow"></i>
+            <a href="#"><i class="bx bx-arrow-down-right-stroke"></i> </a>
+          </div>
+          <h3>VIDEO EDITING</h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil,
+            impedit ex quam voluptate dolores deserunt.
+          </p>
+        </div>
+        <div class="service-box">
+          <div class="icon">
+            <i class="bx bx-camera"></i>
+            <a href="#"><i class="bx bx-arrow-down-right-stroke"></i> </a>
+          </div>
+          <h3>PHOTOGRAPHER</h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil,
+            impedit ex quam voluptate dolores deserunt.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- =======resume============ -->
+    <section class="resume">
+      <div class="resume-box">
+        <h2>why hire me ?</h2>
+        <p class="desc">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum eos
+          molestias totam, dolorem nihil corrupti.
+        </p>
+        <button class="resume-btn actives-resume">experience</button>
+        <button class="resume-btn">education</button>
+        <button class="resume-btn">skills</button>
+        <button class="resume-btn">about me</button>
+      </div>
+      <div class="resume-box">
+        <div class="details experience active-details">
+          <h2 class="resume-span">my <span>experience</span></h2>
+          <p class="desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+            asperiores quod porro id quaerat dolorum! Vel maiores accusantium
+            inventore praesentium?
+          </p>
+          <div class="resume-items container">
+            <div class="resume-list service-box">
+              <p class="year">2025-present</p>
+              <h3>frontend developer</h3>
+              <p class="company"><span></span>abc corp.</p>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error,
+                obcaecati!
+              </p>
+            </div>
+            <div class="resume-list service-box">
+              <p class="year">2023-2025</p>
+              <h3>full stack developer</h3>
+              <p class="company"><span></span>google</p>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error,
+                obcaecati!
+              </p>
+            </div>
+            <div class="resume-list service-box">
+              <p class="year">2022-2023</p>
+              <h3>backend developer</h3>
+              <p class="company"><span></span>youtube</p>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error,
+                obcaecati!
+              </p>
+            </div>
+            <div class="resume-list service-box">
+              <p class="year">2021-2022</p>
+              <h3>frontend developer</h3>
+              <p class="company"><span></span>xyz inc.</p>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error,
+                obcaecati!
+              </p>
+            </div>
+            <div class="resume-list service-box">
+              <p class="year">2021-2022</p>
+              <h3>ul/ux developer</h3>
+              <p class="company"><span></span>xyz inc.</p>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error,
+                obcaecati!
+              </p>
+            </div>
+            <div class="resume-list service-box">
+              <p class="year">2021-2022</p>
+              <h3>junior developer</h3>
+              <p class="company"><span></span>xyz inc.</p>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error,
+                obcaecati!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="details education">
+          <h2 class="resume-span">my <span>education</span></h2>
+          <p class="desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+            asperiores quod porro id quaerat dolorum! Vel maiores accusantium
+            inventore praesentium?
+          </p>
+          <div class="resume-items container">
+            <div class="resume-list service-box">
+              <p class="year">2018</p>
+              <h3>programer</h3>
+              <p class="company"><span></span>online.</p>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error,
+                obcaecati!
+              </p>
+            </div>
+            <div class="resume-list service-box">
+              <p class="year">2023-2025</p>
+              <h3>full stack developer</h3>
+              <p class="company"><span></span>google</p>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error,
+                obcaecati!
+              </p>
+            </div>
+            <div class="resume-list service-box">
+              <p class="year">2022-2023</p>
+              <h3>backend developer</h3>
+              <p class="company"><span></span>youtube</p>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error,
+                obcaecati!
+              </p>
+            </div>
+            <div class="resume-list service-box">
+              <p class="year">2021-2022</p>
+              <h3>frontend developer</h3>
+              <p class="company"><span></span>xyz inc.</p>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error,
+                obcaecati!
+              </p>
+            </div>
+            <div class="resume-list service-box">
+              <p class="year">2021-2022</p>
+              <h3>ul/ux developer</h3>
+              <p class="company"><span></span>xyz inc.</p>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error,
+                obcaecati!
+              </p>
+            </div>
+            <div class="resume-list service-box">
+              <p class="year">2021-2022</p>
+              <h3>junior developer</h3>
+              <p class="company"><span></span>xyz inc.</p>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error,
+                obcaecati!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="details skills">
+          <h2 class="resume-span">my <span>skills</span></h2>
+          <p class="desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+            asperiores quod porro id quaerat dolorum! Vel maiores accusantium
+            inventore praesentium?
+          </p>
+          <div class="resume-items">
+            <div class="resume-list service-box">
+              <i class="fa-brands fa-html5"></i>
+              <span>HTML</span>
+            </div>
+            <div class="resume-list service-box">
+              <i class="fa-brands fa-css3"></i>
+              <span>CSS</span>
+            </div>
+            <div class="resume-list service-box">
+              <i class="fa-brands fa-java"></i>
+              <span>Javascript</span>
+            </div>
+            <div class="resume-list service-box">
+              <i class="fa-brands fa-react"></i>
+              <span>REACT.JS</span>
+            </div>
+            <div class="resume-list service-box">
+              <i class="bx bxl-nodejs"></i>
+              <span>NODE.JS</span>
+            </div>
+            <div class="resume-list service-box">
+              <i class="bx bxl-mongodb"></i>
+              <span>MONGOBD</span>
+            </div>
+            <div class="resume-list service-box">
+              <i class="bx bxl-tailwind-css"></i>
+              <span>TAILWIND</span>
+            </div>
+            <div class="resume-list service-box">
+              <i class="bx bxl-vuejs"></i>
+              <span>VUE.JS</span>
+            </div>
+          </div>
+        </div>
+        <div class="details about">
+          <h2 class="resume-span">about <span>me</span></h2>
+          <p class="desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+            asperiores quod porro id quaerat dolorum! Vel maiores accusantium
+            inventore praesentium?
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- ============portfolio section =====-->
+    <section class="portfolio active">
+      <h1 class="resume-span">latest <span>projects</span></h1>
+      <div class="portfolio-container">
+        <div class="portfolio-box">
+          <p class="number num-active">01</p>
+          <h3>frontend projects</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti blanditiis dicta qui quo illum non.</p>
+          <div class="tech">
+            HTML, CSS, Javascript.
+          </div>
+          <div class="live-sources">
+            <i class='bx bx-arrow-back'></i>
+            <i class='bx bxl-github' ></i>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <p class="number">02</p>
+        </div>
+        <div class="portfolio-box">
+          <p class="number">03</p>
+        </div>
+        <div class="portfolio-box">
+          <p class="number">04</p>
+        </div>
+        <div class="portfolio-box">
+          <p class="number">05</p>
+        </div>
+        <div class="portfolio-box">
+          <p class="number">06</p>
         </div>
       </div>
     </section>
