@@ -30,12 +30,53 @@ section {
   width: 100%;
   height: 100%;
   padding: 7rem 10%;
-  background-color: var(--bg-color);
   visibility: hidden;
   overflow: hidden;
   opacity: 0;
   position: absolute;
   color: var(--white-color);
+}
+
+.bar-box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+}
+
+.bar {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-color);
+  animation: hideBar .5s ease-in-out both;
+  animation-delay: calc(.1s * var(--i));
+
+}
+@keyframes hideBar {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+
+}
+
+.bar-box.active .bar {
+  animation: showBar .5s ease-in-out both;
+  animation-delay: calc(.1s * var(--i));
+}
+
+@keyframes showBar {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+
 }
 
 h1,
@@ -47,12 +88,33 @@ p {
 
 }
 
-section.active {
-  visibility: visible;
-  overflow: auto;
-  opacity: 1;
+section.active-page {
+  animation: showPage 1.5s linear forwards;
+  animation-delay: 1.6s;
 }
 
+@keyframes showPage {
+  100% {
+    visibility: visible;
+    overflow: auto;
+    opacity: 1;
+  }
+
+}
+
+header.active {
+  animation: showHeader 1.5s linear forwards;
+  animation-delay: 1.2s;
+
+}
+
+@keyframes showHeader {
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+
+}
 
 .navigation {
   width: 100%;
@@ -64,6 +126,8 @@ section.active {
   background-color: var(--bg-color);
   z-index: 1;
   padding: 0 10%;
+  opacity: 0;
+  visibility: hidden;
 
 }
 
@@ -114,7 +178,7 @@ section.active {
 
 }
 
-.nav-bar li.active {
+.nav-bar li.active-menu {
   font-size: 1.2rem;
   font-weight: 500;
   color: var(--main-color);
@@ -422,7 +486,7 @@ section.active {
 .hero-img {
   width: 100%;
   height: 100%;
-  padding: 2rem;
+  padding: 1.5rem 2.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -758,6 +822,8 @@ section.active {
 .portfolio-info {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding: 2rem 0;
 }
 
 .portfolio-container {
@@ -767,7 +833,7 @@ section.active {
   font-size: 1rem;
 }
 
-.number.num-active {
+.portfolio-box.num-active {
   display: block;
 }
 
@@ -775,11 +841,14 @@ section.active {
   font-size: 4rem;
   -webkit-text-stroke: .1rem var(--main-color);
   color: transparent;
-  display: none;
 }
-.portfolio-box{
+
+.portfolio-box {
   width: 100%;
+  display: none;
+
 }
+
 .portfolio-box h3 {
   font-size: 2rem;
   margin: 1rem 0;
@@ -810,7 +879,7 @@ section.active {
 .live-sources span {
   top: 0;
   color: var(--bg-color);
-  font-size: 1rem;
+  font-size: .8rem;
   position: absolute;
   opacity: 0;
   background-color: #fff;
@@ -837,7 +906,7 @@ section.active {
   background-color: var(--second-bg-color);
   border: #323946;
   margin-right: 4rem;
-  padding: 1.2rem;
+  padding: 1rem;
 
 
 }
@@ -849,47 +918,55 @@ section.active {
 .live-sources a:first-child i {
   transform: rotate(-85deg);
 }
-.portfolio-item{
+
+.portfolio-item {
   width: 100%;
   height: 15rem;
   border-radius: 1rem;
- 
+
 
 }
-.portfolio-item{
- display: grid;
+
+.portfolio-item {
+
+  display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 100%;
   gap: 2rem;
   height: inherit;
   transition: .5s;
 }
+
 .portfolio-item {
   transition: transform .5s ease-in-out;
 }
-.portfolio-item{
+
+.portfolio-item {
   height: inherit;
 }
-.portfolio-img{
+
+.portfolio-img {
   width: 100%;
-  height: 100%;
+  height: 80%;
   overflow: hidden;
-  padding: 2rem;
+  object-fit: cover;
+
 }
 
-.portfolio-img img{
+.portfolio-img img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   border-radius: 1rem;
 
 }
-.nav-btn{
-  text-align: right;
-  margin-top: 2rem;
+
+.nav-btn {
+  text-align: center;
+  margin-top: .2rem;
 }
-.nav-btn button{
+
+.nav-btn button {
   display: inline-flex;
   padding: .4rem;
   background-color: var(--second-bg-color);
@@ -901,9 +978,132 @@ section.active {
   margin-left: 1rem;
 
 }
-.nav-btn button .disable{
+
+.nav-btn button .disable {
   border-color: var(--second-bg-color);
   color: var(--disabled-color);
 }
 
+.portfolio-details {
+  overflow: hidden;
+}
 
+/* =======contact section start======== */
+.contat-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+.contact-box:first-child {
+  align-items: center;
+}
+
+.contact-box h2 {
+  font-size: 2.5rem;
+}
+
+.desc {
+  font-size: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+.contact-details {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.contact-details i {
+  display: inline-flex;
+  background-color: var(--second-bg-color);
+  font-size: 3rem;
+  padding: 1.2rem;
+  border-radius: .6rem;
+  margin-right: 1.5rem;
+}
+
+.details-box p:first-child {
+  color: var(--main-color);
+
+}
+
+.heading {
+  background-image: linear-gradient(to right, #FDFC47 0%, #24FE41 51%, #FDFC47 100%)
+}
+
+.heading {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 5px #eee;
+  border-radius: 10px;
+  border: none;
+  margin-left: 40%;
+  margin-top: 1.3rem;
+  display: block;
+}
+
+.heading:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.contact-box form {
+  background-color: var(--second-bg-color);
+  padding: 2rem 3rem 3rem;
+  border-radius: 1rem;
+  text-align: center
+}
+
+.contact-box form h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.form-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.form-box input,
+textarea {
+  padding: 1.2rem;
+  background-color: var(--bg-color);
+  border: .1rem solid var(--bg-color);
+  border-radius: .6rem;
+  font-size: 1rem;
+  color: var(--white-color);
+  text-transform: capitalize;
+
+}
+
+.form-box textarea {
+  grid-column: 1 / -1;
+  height: 10rem;
+  resize: none;
+}
+
+input,
+textarea {
+
+  outline: none;
+  transition: 0.3s;
+}
+
+.form-box input:focus {
+  border-color: #24FE41;
+  box-shadow: 0 0 5px #24FE41;
+}
+
+textarea:focus {
+  border-color: var(--main-color);
+  box-shadow: 0 0 5px var(--main-color);
+}
