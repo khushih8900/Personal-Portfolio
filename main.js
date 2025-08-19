@@ -1,9 +1,15 @@
-const navLink = document.querySelectorAll('header nav a');
-const logoLink = document.querySelectorAll('.logo'); 
+
+
+
+const navLink = document.querySelectorAll('header nav a'); // main nav
+const logoLink = document.querySelectorAll('.logo a'); 
 const section = document.querySelectorAll('section');
 
+// sidebar nav
+const sideLinks = document.querySelectorAll('.side-navigation ul li a');
+
 const activePage = () => {
-  const header = document.querySelector('header'); // শুধু একটা header
+  const header = document.querySelector('header'); 
   const barBox = document.querySelectorAll('.bar-box');
 
   header.classList.remove('active');
@@ -12,6 +18,7 @@ const activePage = () => {
   }, 1100);
 
   navLink.forEach(link => link.classList.remove('active-page'));
+  sideLinks.forEach(link => link.parentElement.classList.remove('active-menu'));
 
   barBox.forEach(box => {
     box.classList.remove('active');
@@ -23,13 +30,35 @@ const activePage = () => {
   section.forEach(sec => sec.classList.remove('active-page'));
 };
 
+// main nav click
 navLink.forEach((link, index) => {
   link.addEventListener('click', () => {
     if (!link.classList.contains('active-page')) {
       activePage();
       link.classList.add('active-page');
+
+      // sidebar sync
+      sideLinks[index].parentElement.classList.add('active-menu');
+
       setTimeout(() => {
-        section[index].classList.add('active-page'); // একই class নাম
+        section[index].classList.add('active-page'); 
+      }, 1100);
+    }
+  });
+});
+
+// sidebar click
+sideLinks.forEach((link, index) => {
+  link.addEventListener('click', () => {
+    if (!link.parentElement.classList.contains('active-menu')) {
+      activePage();
+      link.parentElement.classList.add('active-menu');
+
+      // main nav sync
+      navLink[index].classList.add('active-page');
+
+      setTimeout(() => {
+        section[index].classList.add('active-page'); 
       }, 1100);
     }
   });
@@ -41,12 +70,14 @@ logoLink.forEach(logo => {
     if (!navLink[0].classList.contains('active-page')) {
       activePage();
       navLink[0].classList.add('active-page');
+      sideLinks[0].parentElement.classList.add('active-menu');
       setTimeout(() => {
         section[0].classList.add('active-page');
       }, 1100);
     }
   });
 });
+
 
 
 / navigation / 
@@ -70,7 +101,7 @@ menuIcon.addEventListener('click', function () {
 });
 / resume button/
 const resumeBtn = document.querySelectorAll('.resume-btn');
-const details = document.querySelectorAll('.details'); // <-- সব details ধরো
+const details = document.querySelectorAll('.details'); 
 
 resumeBtn.forEach((btn, index) => {
   btn.addEventListener('click', function () {
@@ -90,13 +121,14 @@ const arrowRight = document.querySelector('.nav-btn .right');
 const arrowLeft = document.querySelector('.nav-btn .leftBtn');
 const imgSlide = document.querySelector('.portfolio-item');
 
-const portfolioBoxes = document.querySelectorAll('.portfolio-box'); // সবগুলো নিলাম
+const portfolioBoxes = document.querySelectorAll('.portfolio-box'); 
 const totalSlides = document.querySelectorAll('.portfolio-item .portfolio-img').length;
 
 let index = 0;
 
 const activePortfolio = () => {
-  // slide move করানো
+  
+  
   imgSlide.style.transform = `translateX(calc(${index * -100}% - ${index * 2}rem))`;
 
   // active class update
