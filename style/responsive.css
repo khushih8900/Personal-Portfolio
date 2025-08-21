@@ -48,6 +48,28 @@
         width: 100%;
         mix-blend-mode: lighten;
     }
+
+    .resume {
+        grid-template-columns: 1fr;
+
+    }
+
+    .portfolio-info {
+        grid-template-columns: 1fr;
+
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+
+    }
+
+    .form-box {
+        grid-template-columns: 1fr;
+
+
+    }
+
 }
 
 /* Small devices (≥576px and <768px) */
@@ -113,7 +135,8 @@
         grid-template-columns: 1fr;
 
     }
-    .form-box{
+
+    .form-box {
         grid-template-columns: 1fr;
 
 
@@ -175,7 +198,7 @@
         width: 99%;
         mix-blend-mode: lighten;
     }
-    
+
     .resume {
         grid-template-columns: 1fr;
 
@@ -190,7 +213,8 @@
         grid-template-columns: 1fr;
 
     }
-    .form-box{
+
+    .form-box {
         grid-template-columns: 1fr;
 
 
